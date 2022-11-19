@@ -30,6 +30,7 @@ public class enemy_movment : MonoBehaviour
         direction = (main_character.transform.position - transform.position).normalized;
         projectile_enemy = Instantiate(bullet, new Vector3(transform.position.x,transform.position.y,transform.position.z), Quaternion.identity);
         projectile_enemy.SetActive(true);
+        projectile_enemy.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         projectile_enemy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         projectile_enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
         Destroy(projectile_enemy, 3f);
