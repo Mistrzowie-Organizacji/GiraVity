@@ -10,13 +10,13 @@ public class BlackHoleScale : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        blackHole = GameObject.Find("BlackHole");
+        blackHole = GameObject.Find("black_hole_official");
     }
     private void scale()
     {
         size = blackHole.transform.localScale;
-        size.x += 0.0001f;
-        size.y += 0.0001f;
+        size.x += 0.005f;
+        size.y += 0.005f;
         blackHole.transform.localScale = size;
     }
     private void bounce()
