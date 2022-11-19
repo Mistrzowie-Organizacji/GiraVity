@@ -23,7 +23,7 @@ public class NeckScale : MonoBehaviour
         head = GameObject.Find("Head");
         neck = GameObject.Find("Neck");
         body = GameObject.Find("Body");
-        Vector3 headPos = head.transform.position - new Vector3(0.5f,0,0);
+        Vector3 headPos = head.transform.position - new Vector3(1f,0,0);
         Vector3 bodyPos = body.transform.position + new Vector3(0.7f,0,0);
 
         Vector3 bodyToHead = headPos - bodyPos;
@@ -32,10 +32,9 @@ public class NeckScale : MonoBehaviour
         neck.transform.position = bodyPos + (bodyToHead / 2);
         neck.transform.rotation = Quaternion.FromToRotation(Vector2.up, bodyToHead);
 
-        head.transform.position = bodyPos + new Vector3(0, neckLength, 0);
+        head.transform.position = bodyPos + new Vector3(1f, neckLength, 0);
         if(Input.GetKey(KeyCode.W)){
             neckLength += 0.1f;
-            
         }
         
         if(Input.GetKey(KeyCode.S)){
