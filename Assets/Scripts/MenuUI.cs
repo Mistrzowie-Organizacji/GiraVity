@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
-public class MenuUI : MonoBehaviour
+public class MenuUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private GameObject howToPlay;
-
+    private bool isPressedButton;
     private void Awake()
     {
         howToPlay =  transform.Find("HowToPlay").gameObject;
@@ -29,5 +31,19 @@ public class MenuUI : MonoBehaviour
     public void OnClickExit()
     {
         Application.Quit();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        isPressedButton = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        isPressedButton = false;
+    }
+    public void changeGirraffeHeight()
+    {
+        
     }
 }
