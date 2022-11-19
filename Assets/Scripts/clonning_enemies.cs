@@ -10,7 +10,7 @@ public class clonning_enemies : MonoBehaviour
     public static int nr_of_enemies = 0;
     private void adding_enemy()
     {
-        new_enemy = Instantiate(enemy_pattern, new Vector3(Random.Range(-99,100),Random.Range(-99,100),enemy_pattern.transform.position.z), Quaternion.identity);
+        new_enemy = Instantiate(enemy_pattern, new Vector3(Random.Range(-99, 100), Random.Range(-99, 100), enemy_pattern.transform.position.z), Quaternion.identity);
         new_enemy.SetActive(true);
         nr_of_enemies++;
     }
