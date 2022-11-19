@@ -8,7 +8,7 @@ public class MenuExitButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Sprite buttonPointerUpSprite;
     [SerializeField] private Sprite buttonPointerDownSprite;
     private Image buttonSprite;
-
+    int easingID = -1;
     [SerializeField] private GameObject girrafeSprite;
     Vector3 girrafeStartingPosition = new Vector3(300, -600);
     Vector3 girrafeOnButtonPosition = new Vector3(300, -465);
@@ -19,12 +19,17 @@ public class MenuExitButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHa
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeOnButtonPosition;
+        LeanTween.cancel(girrafeSprite);
+        if (!LeanTween.isTweening(easingID))
+            easingID = LeanTween.moveLocal(girrafeSprite, girrafeOnButtonPosition, 0.3f).uniqueId;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeStartingPosition;
+
+          LeanTween.moveLocal(girrafeSprite, girrafeStartingPosition, 0.3f);
+        
+
     }
     public void OnPointerDown(PointerEventData eventData)
     {

@@ -9,25 +9,33 @@ public class MenuStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] private Sprite buttonPointerUpSprite;
     [SerializeField] private Sprite buttonPointerDownSprite;
     private Image buttonSprite;
-
+    int easingID = -1;
     void Start()
     {
         buttonSprite = transform.GetComponent<Image>();
     }
-
+    
     [SerializeField] private GameObject girrafeSprite;
     Vector3 girrafeStartingPosition = new Vector3(300, -600);
     Vector3 girrafeOnButtonPosition = new Vector3(300, -150);
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeOnButtonPosition;
-    }
 
+        LeanTween.cancel(girrafeSprite);
+
+        if (!LeanTween.isTweening(easingID))
+        easingID = LeanTween.moveLocal(girrafeSprite, girrafeOnButtonPosition,1f).uniqueId;
+    }
+    
     public void OnPointerExit(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeStartingPosition;
+        
+        LeanTween.moveLocal(girrafeSprite, girrafeStartingPosition,1f);
+        
+
     }
+    
     public void OnPointerDown(PointerEventData eventData)
     {
         buttonSprite.sprite = buttonPointerDownSprite;
@@ -35,5 +43,6 @@ public class MenuStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerUp(PointerEventData eventData)
     {
         buttonSprite.sprite = buttonPointerUpSprite;
+      
     }
 }
