@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
     private Vector3 mouse_position;
     private Vector3 screenposition;
     private Vector3 direction;
-    private float max_velocity = 300f;
+    private float max_velocity = 3f;
     private float bullet_speed = 0.10f;
     private Vector3 get_screen_position()
     {
@@ -24,33 +24,6 @@ public class Shooting : MonoBehaviour
     {
         return Input.mousePosition;
     }
-    private void position_checking()
-    {
-        if (get_character_position().x > 100)
-        {
-            character_position = get_character_position();
-            character_position.x = -99;
-            GameObject.Find("giraffe").transform.position = character_position;
-        }
-        else if (get_character_position().x < -100)
-        {
-            character_position = get_character_position();
-            character_position.x = 99;
-            GameObject.Find("giraffe").transform.position = character_position;
-        }
-        else if (get_character_position().y < -100)
-        {
-            character_position = get_character_position();
-            character_position.y = 99;
-            GameObject.Find("giraffe").transform.position = character_position;
-        }
-        else if (get_character_position().y > 100)
-        {
-            character_position = get_character_position();
-            character_position.y = -99;
-            GameObject.Find("giraffe").transform.position = character_position;
-        }
-    }
     private void shoot()
     {
         screenposition = get_screen_position();
@@ -61,6 +34,7 @@ public class Shooting : MonoBehaviour
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
+        
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-direction.x, -direction.y) * 100);
 
         
@@ -83,7 +57,6 @@ public class Shooting : MonoBehaviour
         {
             bullet_speed += Time.deltaTime;
         }
-        position_checking();
     }
 
     void FixedUpdate(){

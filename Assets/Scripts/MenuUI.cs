@@ -1,21 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class MenuUI : MonoBehaviour
+
+public class MenuUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    void OnClickStart()
+    private GameObject howToPlay;
+    private bool isPressedButton;
+    private void Awake()
+    {
+        howToPlay =  transform.Find("HowToPlay").gameObject;
+    }
+    public void OnClickStart()
     {
 
     }
 
-    void OnClickHowToPlay()
+    public void OnClickOpenHowToPlay()
     {
+        howToPlay.SetActive(true);
 
     }
-
-    void OnClickExit()
+    public void OnClickCloseHowToPlay()
     {
+        howToPlay.SetActive(false);
 
+    }
+    public void OnClickExit()
+    {
+        Application.Quit();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        isPressedButton = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        isPressedButton = false;
+    }
+    public void changeGirraffeHeight()
+    {
+        
     }
 }
