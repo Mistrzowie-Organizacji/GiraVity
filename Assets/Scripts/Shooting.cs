@@ -36,11 +36,8 @@ public class Shooting : MonoBehaviour
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
         
        
-       if(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > max_velocity/2)
-        {
-            
-        }
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-direction.x, -direction.y) * 100);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-direction.x, -direction.y) * max_velocity/3;
+
         
         
         Destroy(projectile, 3f);
