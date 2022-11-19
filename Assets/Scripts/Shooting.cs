@@ -10,7 +10,11 @@ public class Shooting : MonoBehaviour
     private Vector3 mouse_position;
     private Vector3 screenposition;
     private Vector3 direction;
+<<<<<<< Updated upstream
     private float max_velocity = 3f;
+=======
+    private float max_velocity = 30f;
+>>>>>>> Stashed changes
     private float bullet_speed = 0.10f;
     private Vector3 get_screen_position()
     {
@@ -34,9 +38,17 @@ public class Shooting : MonoBehaviour
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
+<<<<<<< Updated upstream
         
+=======
+       
+       if(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > max_velocity/2)
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = 0;
+        }
+>>>>>>> Stashed changes
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-direction.x, -direction.y) * 100);
-
+        
         
         Destroy(projectile, 3f);
         
