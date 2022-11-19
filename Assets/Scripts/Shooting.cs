@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     }
     private Vector3 get_character_position()
     {
-        return GameObject.Find("minotaur_pseudo").transform.position;
+        return GameObject.Find("giraffe").transform.position;
     }
     private Vector3 get_mouse_position()
     {
