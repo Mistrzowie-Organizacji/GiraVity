@@ -12,10 +12,10 @@ public class BlackHoleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x_move = Random.Range(70, 100);
-        y_move = Random.Range(70, 100);
+        x_move = Random.Range(150, 250);
+        y_move = Random.Range(150, 250);
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(20 * Time.deltaTime * 70, 20 * Time.deltaTime * 70));
+        rb.AddForce(new Vector2(20 * Time.deltaTime * x_move, 20 * Time.deltaTime * y_move));
     }
 
     private void move()

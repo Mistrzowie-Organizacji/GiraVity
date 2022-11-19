@@ -9,6 +9,8 @@ public class Shooting : MonoBehaviour
     private Vector3 character_position;
     private Vector3 mouse_position;
     private Vector3 screenposition;
+    private Vector3 gun_position;
+    private Quaternion  gun_rotation;
     private Vector3 direction;
     private float max_velocity = 30f;
     private float bullet_speed = 0.10f;
@@ -28,9 +30,12 @@ public class Shooting : MonoBehaviour
     {
         screenposition = get_screen_position();
         mouse_position = get_mouse_position();
+        gun_position = GameObject.Find("plasmagun").transform.position;
+        gun_rotation = GameObject.Find("plasmagun").transform.rotation;
         character_position = get_character_position();
         direction = (mouse_position - screenposition).normalized;
-        projectile = Instantiate(bullet, new Vector3(character_position.x, character_position.y, character_position.z), Quaternion.identity);
+        projectile = Instantiate(bullet, new Vector3(gun_position.x, gun_position.y, gun_position.z), Quaternion.identity);
+        projectile.transform.rotation = gun_rotation;
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
@@ -70,5 +75,7 @@ public class Shooting : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * 0.01f;
         }
+        GameObject gun = GameObject.Find("plasmagun");
+        gun.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Input.mousePosition.y - Camera.main.WorldToScreenPoint(gun.transform.position).y, Input.mousePosition.x - Camera.main.WorldToScreenPoint(gun.transform.position).x) * Mathf.Rad2Deg);
     }
 }
