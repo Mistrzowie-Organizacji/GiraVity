@@ -9,6 +9,7 @@ public class MenuHowToPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Sprite buttonPointerUpSprite;
     [SerializeField] private Sprite buttonPointerDownSprite;
     private Image buttonSprite;
+    int easingID = -1;
     void Start()
     {
         buttonSprite = transform.GetComponent<Image>();
@@ -20,12 +21,17 @@ public class MenuHowToPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeOnButtonPosition;
+
+        LeanTween.cancel(girrafeSprite);
+        if (!LeanTween.isTweening(easingID))
+            easingID = LeanTween.moveLocal(girrafeSprite, girrafeOnButtonPosition, 0.7f).uniqueId;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        girrafeSprite.transform.localPosition = girrafeStartingPosition;
+
+            LeanTween.moveLocal(girrafeSprite, girrafeStartingPosition, 0.7f);
+
     }
     public void OnPointerDown(PointerEventData eventData)
     {
