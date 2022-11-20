@@ -1840,7 +1840,7 @@ Transform:
   m_GameObject: {fileID: 1220213424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.44, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1619656854}
@@ -1972,6 +1972,7 @@ MonoBehaviour:
   active: 0
   activeSprite: {fileID: 977430487, guid: 63bc9854a7d11394a82298be3ddaf2cc, type: 3}
   inactiveSprite: {fileID: 1768276747, guid: 63bc9854a7d11394a82298be3ddaf2cc, type: 3}
+  image: {fileID: 0}
 --- !u!1 &1261906729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,11 +2822,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3702390449416147089, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3702390449416147089, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3702390449416147089, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_LocalPosition.x
