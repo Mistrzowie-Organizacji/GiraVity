@@ -5,6 +5,10 @@ using UnityEngine;
 public class Boss_mechanics : MonoBehaviour
 {
     public GameObject enemy_bullet;
+    public GameObject asteroid;
+    private GameObject new_asteroid;
+    private float asteroid_rain_timer = 0;
+    private float time_between_asteroid = 0;
     private GameObject projectile;
     private float auto_attack_timer = 0;
     private GameObject head_1;
@@ -55,6 +59,19 @@ public class Boss_mechanics : MonoBehaviour
         Destroy(projectile, 5f);
 
     }
+    private void asteroid_attack()
+    {
+        if(time_between_asteroid >= 0.5f)
+        {
+            Vector3 main_character_position = GameObject.Find("giraffe").transform.position;
+            time_between_asteroid = 0;
+            new_asteroid = GameObject.Instantiate(asteroid, new Vector3(Random.Range(main_character_position.x -15,main_character_position.x + 15), main_character_position.y+20, 0), Quaternion.identity);
+            new_asteroid.GetComponent<Rigidbody2D>().velocity = new Vector2(-3, 0);
+            new_asteroid.SetActive(true);
+            Destroy(new_asteroid, 10f);
+
+        }
+    }
     private void timers_checking()
     {
         if(auto_attack_timer < 2.5f)
@@ -65,6 +82,20 @@ public class Boss_mechanics : MonoBehaviour
         {
             auto_attack();
             auto_attack_timer = 0;
+        }
+        if(asteroid_rain_timer < 20f)
+        {
+            asteroid_rain_timer += Time.deltaTime;
+        }
+        else if(asteroid_rain_timer >= 20f && asteroid_rain_timer < 30f)
+        {
+            asteroid_rain_timer += Time.deltaTime;
+            time_between_asteroid += Time.deltaTime;
+            asteroid_attack();
+        }
+        else
+        {
+            asteroid_rain_timer = 0;
         }
     }
     void Update()

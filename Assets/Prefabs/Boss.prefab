@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3542915505330127186}
   - component: {fileID: 3542915505330127188}
   - component: {fileID: 1094459364527696597}
-  m_Layer: 0
+  - component: {fileID: 1096137409}
+  m_Layer: 3
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +185,20 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1096137409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542915505330127191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1719d974c96334da213a5a3e5f75f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_bullet: {fileID: 0}
+  asteroid: {fileID: 0}
 --- !u!1 &3542915505851339215
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +210,7 @@ GameObject:
   - component: {fileID: 2351575457043427646}
   - component: {fileID: 3542915505851339213}
   - component: {fileID: 8746259624662117178}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +354,7 @@ GameObject:
   - component: {fileID: 3542915506166311296}
   - component: {fileID: 3542915506166311310}
   - component: {fileID: 3542915506166311297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +454,7 @@ GameObject:
   - component: {fileID: 3542915506615926445}
   - component: {fileID: 3542915506615926443}
   - component: {fileID: 3542915506615926442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +554,7 @@ GameObject:
   - component: {fileID: 3542915506729560691}
   - component: {fileID: 3542915506729560689}
   - component: {fileID: 3542915506729560688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +654,7 @@ GameObject:
   - component: {fileID: 3542915506812879350}
   - component: {fileID: 3542915506812879348}
   - component: {fileID: 3542915506812879351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +754,7 @@ GameObject:
   - component: {fileID: 1220684302144842620}
   - component: {fileID: 2460458268748379274}
   - component: {fileID: 453764517888699244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spinningedges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8265619910613345374}
   - component: {fileID: 6369135417910331224}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +947,7 @@ GameObject:
   - component: {fileID: 8633685004382011404}
   - component: {fileID: 7257213493679344896}
   - component: {fileID: 4585016016068127359}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spiral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
