@@ -18,12 +18,15 @@ public class Shooting : MonoBehaviour
     private Transform plasmagun;
     private Rigidbody2D rb;
 
+    private AudioSource blasterSFX;
+
     private void Awake()
     {
         mainCamera = Camera.main;
         giraffe = GameObject.Find("giraffe").transform;
         plasmagun = GameObject.Find("plasmagun").transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        blasterSFX = GetComponent<AudioSource>();
     }
 
     private Vector3 get_screen_position()
@@ -55,6 +58,8 @@ public class Shooting : MonoBehaviour
         rb.velocity = new Vector2(-direction.x, -direction.y) * max_velocity / 3;
 
         Destroy(projectile, 3f);
+
+        blasterSFX.PlayOneShot(blasterSFX.clip);
     }
 
     // Update is called once per frame
