@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PointSystem : MonoBehaviour
@@ -19,6 +20,6 @@ public class PointSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject.Find("Points").GetComponent<TextMeshProUGUI>().text = "Points: " + points;
     }
 }
