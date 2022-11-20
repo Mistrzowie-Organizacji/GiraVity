@@ -1,27 +1,26 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class MenuUI : Singleton<MenuUI>
 {
-    private GameController gameController;
+    public GameController gameController;
 
-    private GameObject howToPlay;
-    private GameObject victoryWindow;
+    public GameObject howToPlay;
+    public GameObject victoryWindow;
     private GameObject mainMenu;
 
     protected override void Awake()
     {
-        gameController = transform.parent.GetComponent<GameController>();
-        howToPlay = transform.Find("HowToPlay").gameObject;
-        victoryWindow = transform.Find("VictoryWindowUI").gameObject;
-        mainMenu = transform.Find("MainMenu").gameObject;
+        //gameController = transform.parent.GetComponent<GameController>();
+        //howToPlay = transform.Find("HowToPlay").gameObject;
+        //victoryWindow = transform.Find("VictoryWindowUI").gameObject;
+        mainMenu = transform.Find("MainMenuUI").gameObject;
     }
 
     public void OnClickStart()
     {
-        gameController.LoadGameScene();
-        gameController.isGameActive = true;
+        SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Additive);
     }
 
     public void OnClickOpenHowToPlay()
@@ -36,8 +35,8 @@ public class MenuUI : Singleton<MenuUI>
     }
     public void OnClickExit()
     {
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void ToggleVictoryWindow(bool v)
@@ -47,7 +46,7 @@ public class MenuUI : Singleton<MenuUI>
 
     public void LoadGameScene()
     {
-        gameController.LoadGameScene();
+        //gameController.LoadGameScene();
     }
 
     public void ToggleMainMenu(bool v)
