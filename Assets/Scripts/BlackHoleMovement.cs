@@ -25,7 +25,13 @@ public class BlackHoleMovement : MonoBehaviour
         direction.x += 0.1f;
         blackHole.transform.position = direction;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Hi");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
