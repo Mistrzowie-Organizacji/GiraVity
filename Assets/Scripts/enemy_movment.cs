@@ -7,6 +7,8 @@ public class enemy_movment : MonoBehaviour
     public GameObject bullet;
     private GameObject projectile_enemy;
     GameObject enemy_pattern;
+    private float bullet_time = 0;
+    private float random_generator_timer = 0;
     GameObject main_character;
     private Vector3 direction;
 
@@ -32,27 +34,51 @@ public class enemy_movment : MonoBehaviour
         projectile_enemy.SetActive(true);
         projectile_enemy.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         projectile_enemy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        projectile_enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
-        Destroy(projectile_enemy, 3f);
+        projectile_enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 5;
+        Destroy(projectile_enemy, 5f);
     }
     private void movement()
     {
         if (distance_to_character() >= 10)
         {
-            if (Random.Range(0, 10) > 2)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, get_main_character_position(), 10 * Time.deltaTime);
-            }
+                transform.position = Vector2.MoveTowards(transform.position, get_main_character_position(), 7 * Time.deltaTime);
         }
         else
         {
-            enemy_shooting();
+            float random_range = Random.Range(0.3f, 1);
+            if(random_generator_timer > 1 )
+            {
+                random_range = Random.Range(0.3f, 1);
+            }
+            if (bullet_time > random_range)
+            {
+                enemy_shooting();
+                bullet_time = 0;
+            }
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        
+       if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
+       {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+       }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if(bullet_time < 1f)
+        {
+            bullet_time += Time.deltaTime;
+        }
+        if(random_generator_timer <1f)
+        {
+            random_generator_timer += Time.deltaTime;
+        }    
         movement();
     }
 }
