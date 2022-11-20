@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 
-public class MenuUI : MonoBehaviour
+public class MenuUI : Singleton<MenuUI>
 {
+    private GameController gameController;
+
     private GameObject howToPlay;
-    string gameSceneName = "SampleScene";
-    string mainMenuSceneName = "MainMenuScene";
-    private void Awake()
+    private GameObject victoryWindow;
+    private GameObject mainMenu;
+
+    protected override void Awake()
     {
-        howToPlay =  transform.Find("HowToPlay").gameObject;
+        gameController = transform.parent.GetComponent<GameController>();
+        howToPlay = transform.Find("HowToPlay").gameObject;
+        victoryWindow = transform.Find("VictoryWindowUI").gameObject;
+        mainMenu = transform.Find("MainMenu").gameObject;
     }
+
     public void OnClickStart()
     {
-        SceneManager.UnloadSceneAsync(mainMenuSceneName);
-        SceneManager.LoadSceneAsync(gameSceneName);
+        gameController.LoadGameScene();
+        gameController.isGameActive = true;
     }
 
     public void OnClickOpenHowToPlay()
@@ -34,5 +38,20 @@ public class MenuUI : MonoBehaviour
     {
         //Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void ToggleVictoryWindow(bool v)
+    {
+        victoryWindow.SetActive(v);
+    }
+
+    public void LoadGameScene()
+    {
+        gameController.LoadGameScene();
+    }
+
+    public void ToggleMainMenu(bool v)
+    {
+        mainMenu.SetActive(v);
     }
 }

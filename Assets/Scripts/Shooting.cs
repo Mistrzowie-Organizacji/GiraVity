@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -19,7 +17,6 @@ public class Shooting : MonoBehaviour
     private Transform giraffe;
     private Transform plasmagun;
     private Rigidbody2D rb;
-
 
     private void Awake()
     {
@@ -49,7 +46,7 @@ public class Shooting : MonoBehaviour
         gun_rotation = plasmagun.rotation;
         character_position = get_character_position();
         direction = (mouse_position - screenposition).normalized;
-        projectile = Instantiate(bullet, new Vector3(gun_position.x, gun_position.y, gun_position.z), Quaternion.identity);
+        projectile = Instantiate(bullet, new Vector3(gun_position.x, gun_position.y, gun_position.z), Quaternion.identity, transform);
         projectile.transform.rotation = gun_rotation;
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

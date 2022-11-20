@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class VictoryWindow : MonoBehaviour
@@ -16,6 +15,7 @@ public class VictoryWindow : MonoBehaviour
     public void OnClickDoneButton()
     {
         mainMenu.SetActive(true);
+        GameController.Instance.GoBackToMainMenu();
         gameObject.SetActive(false);
     }
 

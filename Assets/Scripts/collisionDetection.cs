@@ -3,6 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class collisionDetection : MonoBehaviour
 {
+    private GameController gameController;
+
+
+    private void Awake()
+    {
+        gameController = transform.parent.parent.GetComponent<GameController>();    
+    }
+
     // Start is called before the first frame update
     public int HP = 3;
     void Start()
@@ -19,7 +27,8 @@ public class collisionDetection : MonoBehaviour
         }
         if (HP == 0)
         {
-            SceneManager.LoadScene("GameOver");
+            // Enable game over UI
+            gameController.GameOver();
         }
 
     }

@@ -25,7 +25,7 @@ public class HPRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < collisionDetection.HP; i++)
+        for (int i = 0; i < 3; i++)
         {
             HPIcon localHpIcon = GameObject.Find("HPIcon"+i).GetComponent<HPIcon>();
             if (i + 1 <= collisionDetection.HP)
