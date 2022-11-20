@@ -285,6 +285,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1226017477204594119, guid: 438f9386003611a4abb454a5758728b2, type: 3}
   m_PrefabInstance: {fileID: 2094228333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1535363721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7773809498242412003, guid: 438f9386003611a4abb454a5758728b2, type: 3}
+  m_PrefabInstance: {fileID: 2094228333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743786959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9199491837006005649, guid: de4e6c0ef22930a429dd9c5af271cad5, type: 3}
+  m_PrefabInstance: {fileID: 9199491838161363139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2094228333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -357,9 +367,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5472390216095669784, guid: 438f9386003611a4abb454a5758728b2, type: 3}
+      propertyPath: Score
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a57c16f6abb2d34b8bbcbd9ce26edaa, type: 2}
+    - target: {fileID: 5472390216095669784, guid: 438f9386003611a4abb454a5758728b2, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 1535363721}
+    - target: {fileID: 5472390216095669784, guid: 438f9386003611a4abb454a5758728b2, type: 3}
       propertyPath: howToPlay
       value: 
       objectReference: {fileID: 1181033654}
+    - target: {fileID: 5472390216095669784, guid: 438f9386003611a4abb454a5758728b2, type: 3}
+      propertyPath: victoryWindow
+      value: 
+      objectReference: {fileID: 1743786959}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438f9386003611a4abb454a5758728b2, type: 3}
 --- !u!1001 &9199491838161363139

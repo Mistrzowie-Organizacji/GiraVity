@@ -25,7 +25,12 @@ public class collisionDetection : MonoBehaviour
             HP -= 1;
             Destroy(collision.gameObject);
         }
-
+        if (HP == 0)
+        {
+            SceneManager.LoadScene("MainMenuScene");
+            PlayerPrefs.SetInt("Score", GameObject.Find("GameController").GetComponent<PointSystem>().points);
+            PlayerPrefs.SetInt("Lost", 1);
+        }
     }
 
     // Update is called once per frame

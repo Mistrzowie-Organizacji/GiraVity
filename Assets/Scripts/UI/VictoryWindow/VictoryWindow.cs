@@ -15,7 +15,7 @@ public class VictoryWindow : MonoBehaviour
     public void OnClickDoneButton()
     {
         mainMenu.SetActive(true);
-        GameController.Instance.GoBackToMainMenu();
+        
         gameObject.SetActive(false);
     }
 
