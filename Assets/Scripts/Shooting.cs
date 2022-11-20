@@ -10,17 +10,32 @@ public class Shooting : MonoBehaviour
     private Vector3 mouse_position;
     private Vector3 screenposition;
     private Vector3 gun_position;
-    private Quaternion  gun_rotation;
+    private Quaternion gun_rotation;
     private Vector3 direction;
     private float max_velocity = 30f;
     private float bullet_speed = 0.10f;
+
+    private Camera mainCamera;
+    private Transform giraffe;
+    private Transform plasmagun;
+    private Rigidbody2D rb;
+
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+        giraffe = GameObject.Find("giraffe").transform;
+        plasmagun = GameObject.Find("plasmagun").transform;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
+
     private Vector3 get_screen_position()
     {
-        return Camera.main.WorldToScreenPoint(get_character_position());
+        return mainCamera.WorldToScreenPoint(get_character_position());
     }
     private Vector3 get_character_position()
     {
-        return GameObject.Find("giraffe").transform.position;
+        return giraffe.position;
     }
     private Vector3 get_mouse_position()
     {
@@ -30,8 +45,8 @@ public class Shooting : MonoBehaviour
     {
         screenposition = get_screen_position();
         mouse_position = get_mouse_position();
-        gun_position = GameObject.Find("plasmagun").transform.position;
-        gun_rotation = GameObject.Find("plasmagun").transform.rotation;
+        gun_position = plasmagun.position;
+        gun_rotation = plasmagun.rotation;
         character_position = get_character_position();
         direction = (mouse_position - screenposition).normalized;
         projectile = Instantiate(bullet, new Vector3(gun_position.x, gun_position.y, gun_position.z), Quaternion.identity);
@@ -39,14 +54,10 @@ public class Shooting : MonoBehaviour
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 100;
-        
-       
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-direction.x, -direction.y) * max_velocity/3;
 
-        
-        
+        rb.velocity = new Vector2(-direction.x, -direction.y) * max_velocity / 3;
+
         Destroy(projectile, 3f);
-        
     }
 
     // Update is called once per frame
@@ -66,16 +77,17 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    void FixedUpdate(){
-        if(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > max_velocity)
+    void FixedUpdate()
+    {
+        if (rb.velocity.magnitude > max_velocity)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * max_velocity;
+            rb.velocity = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * max_velocity;
         }
-        if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 0)
+        if (rb.velocity.magnitude > 0)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * 0.01f;
+            rb.velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * 0.01f;
         }
-        GameObject gun = GameObject.Find("plasmagun");
-        gun.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Input.mousePosition.y - Camera.main.WorldToScreenPoint(gun.transform.position).y, Input.mousePosition.x - Camera.main.WorldToScreenPoint(gun.transform.position).x) * Mathf.Rad2Deg);
+
+        plasmagun.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Input.mousePosition.y - mainCamera.WorldToScreenPoint(plasmagun.position).y, Input.mousePosition.x - mainCamera.WorldToScreenPoint(plasmagun.transform.position).x) * Mathf.Rad2Deg);
     }
 }

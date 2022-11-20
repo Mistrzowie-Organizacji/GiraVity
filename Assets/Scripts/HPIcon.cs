@@ -9,19 +9,20 @@ public class HPIcon : MonoBehaviour
     public bool active = true;
     public Sprite activeSprite;
     public Sprite inactiveSprite;
+    public Image image;
     void Start()
     {
-        
+        image = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(active){
-            GetComponent<Image>().sprite = activeSprite;
+            image.sprite = activeSprite;
         }
         else{
-            GetComponent<Image>().sprite = inactiveSprite;
+            image.sprite = inactiveSprite;
         }
     }
 }
