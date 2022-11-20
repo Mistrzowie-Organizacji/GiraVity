@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Boss_mechanics : MonoBehaviour
 {
     [SerializeField] private int bossHP;
 
+    private Slider bossHpSlider;
+    public GameObject map_objects;
     public GameObject enemy_bullet;
     public GameObject asteroid;
     private GameObject new_asteroid;
@@ -25,18 +28,27 @@ public class Boss_mechanics : MonoBehaviour
         head_2 = GameObject.Find("head (1)");
         head_3 = GameObject.Find("head (2)");
         head_4 = GameObject.Find("head (3)");
+
+        bossHpSlider = transform.Find("BossUI").Find("Slider").GetComponent<Slider>();
+
+        bossHpSlider.value = 1f;
     }
 
     public void TakeDamage(int damage)
     {
+
         bossHP -= damage;
+        bossHpSlider.value -= 0.1f;
+        Debug.Log($"Boss hit! {bossHP} left");
         if (bossHP <= 0)
             Die();
     }
 
     private void Die()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        //SceneManager.LoadScene("MainMenuScene");
+        map_objects.SetActive(true);
+        GameObject.Find("giraffe").transform.position = new Vector3(0, 0, 0);
     }
 
     private Vector3 direction_calculate(Vector3 head_position)

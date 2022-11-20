@@ -21,6 +21,7 @@ public class EnteringBoss : MonoBehaviour
             {
                 Object.Destroy(clonning_enemies.enemies_list[i]);
             }
+            GameObject.Find("black_hole_official").transform.localScale = new Vector3(1, 1, 0);
             clonning_enemies.nr_of_enemies = 0;
             PullIntoTheHole.pulling = false;
             Debug.Log("dziala");

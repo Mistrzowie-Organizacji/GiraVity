@@ -608,9 +608,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 724952228}
     m_Modifications:
     - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
+      propertyPath: bossHP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
       propertyPath: asteroid
       value: 
       objectReference: {fileID: 1427887295}
+    - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
+      propertyPath: map_objects
+      value: 
+      objectReference: {fileID: 180817895}
     - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
       propertyPath: enemy_bullet
       value: 
@@ -4001,10 +4009,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 180817897}
     m_Modifications:
-    - target: {fileID: 1787448125, guid: 9cdc49c792368d440b58b8684fd1bf69, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4869686406983151727, guid: 9cdc49c792368d440b58b8684fd1bf69, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4289,6 +4293,7 @@ GameObject:
   - component: {fileID: 2038965330}
   - component: {fileID: 2038965331}
   - component: {fileID: 2038965332}
+  - component: {fileID: 2038965333}
   m_Layer: 6
   m_Name: bullet_pseudo
   m_TagString: Untagged
@@ -4410,6 +4415,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.34, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &2038965333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038965327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6643ac9dfe20e4b45a6a3ca7bb4e3281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2096153637
 GameObject:
   m_ObjectHideFlags: 0
