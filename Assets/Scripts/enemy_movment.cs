@@ -65,6 +65,7 @@ public class enemy_movment : MonoBehaviour
        {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            GameObject.Find("GameController").GetComponent<PointSystem>().OnKillEnemy();
        }
     }
 
