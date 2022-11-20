@@ -466,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270127350}
   - component: {fileID: 270127351}
+  - component: {fileID: 270127352}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -502,6 +503,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_pattern: {fileID: 1220213424}
+--- !u!114 &270127352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270127349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bc234cd848d9b458627f0d92bb1b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  killPoints: 100
 --- !u!1 &354772131
 GameObject:
   m_ObjectHideFlags: 0
