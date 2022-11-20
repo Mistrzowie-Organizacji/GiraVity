@@ -3574,8 +3574,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &1427887299
-EdgeCollider2D:
+--- !u!70 &1427887299
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3587,21 +3587,9 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1.2652828, y: 1.066169}
-  - {x: 0.6806053, y: 1.1934032}
-  - {x: -1.1736112, y: -0.7919611}
-  - {x: -1.105298, y: -1.1045945}
-  - {x: -0.87574035, y: -1.2371379}
-  - {x: -0.71620333, y: -1.2636077}
-  - {x: -0.22761032, y: -1.1662813}
-  - {x: 1.2736117, y: 1.066557}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: -0.5867157, y: -0.8016145}
+  m_Size: {x: 1.1191483, y: 1.1191483}
+  m_Direction: 0
 --- !u!1 &1429544614
 GameObject:
   m_ObjectHideFlags: 0
