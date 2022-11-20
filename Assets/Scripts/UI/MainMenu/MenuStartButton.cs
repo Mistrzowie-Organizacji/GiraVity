@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
+[DefaultExecutionOrder(1)]
+public class MenuStartButton : Debuggable, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private Sprite buttonPointerUpSprite;
     [SerializeField] private Sprite buttonPointerDownSprite;
     private Image buttonSprite;
+    private Button button;
     int easingID = -1;
+
+    private MenuUI menuUI;
+
+    private void Awake()
+    {
+        menuUI = transform.parent.parent.GetComponent<MenuUI>();
+    }
+
     void Start()
     {
+        button = GetComponent<Button>();
+        PrintDebugLog($"Button null? : {button == null}");
+        PrintDebugLog($"GameController null? : {GameController.Instance == null}");
         buttonSprite = transform.GetComponent<Image>();
+        button.onClick.AddListener(menuUI.LoadGameScene);
     }
     
     [SerializeField] private GameObject girrafeSprite;
@@ -39,6 +53,7 @@ public class MenuStartButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerDown(PointerEventData eventData)
     {
         buttonSprite.sprite = buttonPointerDownSprite;
+
     }
     public void OnPointerUp(PointerEventData eventData)
     {
