@@ -42,6 +42,7 @@ public class collisionDetection : MonoBehaviour
         }
         if (HP == 0)
         {
+            clonning_enemies.nr_of_enemies = 0;
             SceneManager.LoadScene("MainMenuScene");
             PlayerPrefs.SetInt("Score", GameObject.Find("GameController").GetComponent<PointSystem>().points);
             PlayerPrefs.SetInt("Lost", 1);

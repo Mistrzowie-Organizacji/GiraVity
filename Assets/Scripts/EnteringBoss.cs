@@ -21,6 +21,7 @@ public class EnteringBoss : MonoBehaviour
             {
                 Object.Destroy(clonning_enemies.enemies_list[i]);
             }
+            clonning_enemies.nr_of_enemies = 0;
             PullIntoTheHole.pulling = false;
             Debug.Log("dziala");
             GameObject.Find("giraffe").transform.position = new Vector3(480f, 0f, 0f);
