@@ -66,7 +66,7 @@ public class enemy_movment : MonoBehaviour
        if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
        {
             clonning_enemies.nr_of_enemies--;
-            if(Random.Range(0,100) > 10f){
+            if(Random.Range(0,100) < 10f){
                 GameObject hearth = GameObject.Instantiate(heart, transform.position, Quaternion.identity);
                 hearth.SetActive(true);
             }
