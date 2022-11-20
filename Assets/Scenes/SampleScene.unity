@@ -870,7 +870,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 1026846508}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -1501,11 +1501,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980756858}
   m_CullTransparentMesh: 1
---- !u!20 &1026846508 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3702390448892344106, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
-  m_PrefabInstance: {fileID: 3702390449209823061}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1036836804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3702390449416147089, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
@@ -2931,6 +2926,18 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3702390449416147091, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702390449416147091, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702390449416147091, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3702390449416147094, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_Name
       value: giraffe
@@ -2938,6 +2945,42 @@ PrefabInstance:
     - target: {fileID: 3702390449416147094, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653123122846491674, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653123122846491674, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: orthographic size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116524030320804760, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}

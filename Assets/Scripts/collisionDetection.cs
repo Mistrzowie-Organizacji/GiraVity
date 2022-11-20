@@ -25,11 +25,6 @@ public class collisionDetection : MonoBehaviour
             HP -= 1;
             Destroy(collision.gameObject);
         }
-        if (HP == 0)
-        {
-            // Enable game over UI
-            gameController.GameOver();
-        }
 
     }
 

@@ -22,19 +22,11 @@ public class clonning_enemies : MonoBehaviour
     }
     void Update()
     {
-        if (GameController.Instance == null)
-        {
-            return;
-        }
-
-        spawnEnemy(GameController.Instance.isGameActive);
+        spawnEnemy();
     }
 
-    private void spawnEnemy(bool isGameActive)
+    private void spawnEnemy()
     {
-        if (!isGameActive)
-            return;
-
         if (nr_of_enemies < 25 && seconds >= 0.5f)
         {
             adding_enemy();

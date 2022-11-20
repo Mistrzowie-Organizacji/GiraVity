@@ -2181,7 +2181,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 1623418768}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2324,13 +2324,40 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4653123122846491674, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653123122846491674, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: orthographic size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009499127792311615, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
---- !u!20 &1623418768 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3702390448892344106, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
-  m_PrefabInstance: {fileID: 1623418767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1623418769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3702390449416147089, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
