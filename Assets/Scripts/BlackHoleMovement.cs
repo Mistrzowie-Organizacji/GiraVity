@@ -29,8 +29,12 @@ public class BlackHoleMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("Hi");
+            LoadBoss();
         }
+    }
+    private void LoadBoss()
+    {
+
     }
     // Update is called once per frame
     void Update()
