@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemy_movment : MonoBehaviour
 {
     public GameObject bullet;
+
+    public GameObject heart;
     private GameObject projectile_enemy;
     GameObject enemy_pattern;
     private float bullet_time = 0;
@@ -64,9 +66,14 @@ public class enemy_movment : MonoBehaviour
        if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
        {
             clonning_enemies.nr_of_enemies--;
+            if(Random.Range(0,100) < 10f){
+                GameObject hearth = GameObject.Instantiate(heart, transform.position, Quaternion.identity);
+                hearth.SetActive(true);
+            }
             Destroy(gameObject);
             Destroy(collision.gameObject);
             GameObject.Find("GameController").GetComponent<PointSystem>().OnKillEnemy();
+            
        }
     }
 

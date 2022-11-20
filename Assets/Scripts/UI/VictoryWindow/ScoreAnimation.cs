@@ -39,13 +39,19 @@ public class ScoreAnimation : MonoBehaviour
         {
             if (isScalingUp)
             {
-                scaleEasingID = LeanTween.scale(gameObject, animationScale, 0.25f).uniqueId;
-                isScalingUp = false;
+                if(gameObject != null)
+                {
+                    scaleEasingID = LeanTween.scale(gameObject, orginalScale, 0.5f).uniqueId;
+                    isScalingUp = false;
+                }
             }
             else
             {
-                scaleEasingID = LeanTween.scale(gameObject, orginalScale, 0.25f).uniqueId;
-                isScalingUp = true;
+                if (gameObject != null)
+                {
+                    scaleEasingID = LeanTween.scale(gameObject, animationScale, 0.5f).uniqueId;
+                    isScalingUp = true;
+                }
             }
                 
 
