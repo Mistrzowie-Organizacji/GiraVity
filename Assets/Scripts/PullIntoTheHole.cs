@@ -13,6 +13,7 @@ public class PullIntoTheHole : MonoBehaviour
     private float min_distance = 7f;
     private int easingIDx = -1;
     private int easingIDy = -1;
+    public static bool pulling = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,12 +48,18 @@ public class PullIntoTheHole : MonoBehaviour
     // Update is called once per frame
     private void IncreaseValue(float valueX)
     {
-        player.transform.position = new Vector3(valueX, player.transform.position.y);
+        if (pulling)
+        {
+            player.transform.position = new Vector3(valueX, player.transform.position.y);
+        }
     }
 
     private void IncreaseValueY(float valueY)
     {
-        player.transform.position = new Vector3(player.transform.position.x, valueY);
+        if (pulling)
+        {
+            player.transform.position = new Vector3(player.transform.position.x, valueY);
+        }
     }
 }
 

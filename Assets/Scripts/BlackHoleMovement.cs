@@ -9,6 +9,8 @@ public class BlackHoleMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float x_move;
     private float y_move;
+    private GameObject boss;
+    public GameObject boss_pattern;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +31,22 @@ public class BlackHoleMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            LoadBoss();
+            //LoadBoss();
         }
     }
+    /*
     private void LoadBoss()
     {
+        PullIntoTheHole.pulling = false;
+        Debug.Log("dziala");
+        GameObject.Find("giraffe").transform.position = new Vector3(480f,0f,0f);
+        Debug.Log(GameObject.Find("giraffe").transform.position);
+        boss = Instantiate(boss_pattern, new Vector3(boss_pattern.transform.position.x, boss_pattern.transform.position.y, boss_pattern.transform.position.z), Quaternion.identity, transform);
+        boss.SetActive(true);
+        GameObject.Find("MAP_OBJECTS").SetActive(false);
 
     }
+    */
     // Update is called once per frame
     void Update()
     {

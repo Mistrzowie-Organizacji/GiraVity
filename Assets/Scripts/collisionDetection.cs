@@ -25,6 +25,21 @@ public class collisionDetection : MonoBehaviour
             HP -= 1;
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.ToString() == "asteroid(Clone) (UnityEngine.GameObject)")
+        {
+            HP -= 1;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.ToString() == "hp_hearts_0(Clone) (UnityEngine.GameObject)")
+        {
+            HP += 1;
+            Destroy(collision.gameObject);
+            if(HP > 3){
+                HP = 3;
+            }
+        }
         if (HP == 0)
         {
             SceneManager.LoadScene("MainMenuScene");

@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4869686406983151727}
   - component: {fileID: 3158692961629318697}
-  - component: {fileID: 4273079466331556908}
   - component: {fileID: 1159936200342881787}
   - component: {fileID: 7865056853252157103}
   - component: {fileID: 8339358358332704313}
-  m_Layer: 0
+  - component: {fileID: 1787448125}
+  - component: {fileID: 1787448137}
+  - component: {fileID: 1787448118}
+  m_Layer: 7
   m_Name: black_hole_official
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,62 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &4273079466331556908
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123245391218030166}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -1.4377413, y: 1.0497932}
-  - {x: -1.2233582, y: 1.1809998}
-  - {x: -1.0137024, y: 1.2491608}
-  - {x: -0.8103485, y: 1.2758751}
-  - {x: -0.5603485, y: 1.2792969}
-  - {x: -0.32743835, y: 1.255909}
-  - {x: -0.12123108, y: 1.2185326}
-  - {x: 0.11979675, y: 1.1416969}
-  - {x: 0.36473083, y: 1.0258484}
-  - {x: 0.59684753, y: 0.89416504}
-  - {x: 0.77752686, y: 0.7453003}
-  - {x: 0.9564972, y: 0.55389786}
-  - {x: 1.079834, y: 0.3449936}
-  - {x: 1.1351776, y: 0.13446808}
-  - {x: 1.147522, y: 0.062217712}
-  - {x: 1.1386261, y: -0.039188385}
-  - {x: 1.0861206, y: -0.19729614}
-  - {x: 1.016449, y: -0.3080368}
-  - {x: 0.9197998, y: -0.4116516}
-  - {x: 0.76841736, y: -0.5062027}
-  - {x: 0.6004944, y: -0.56905746}
-  - {x: 0.29211426, y: -0.63448715}
-  - {x: 0.021102905, y: -0.6265373}
-  - {x: -0.30101013, y: -0.5765953}
-  - {x: -0.4824829, y: -0.5224457}
-  - {x: -0.7872772, y: -0.41640854}
-  - {x: -1.0231781, y: -0.29006958}
-  - {x: -1.1994781, y: -0.16384125}
-  - {x: -1.328125, y: -0.052108765}
-  - {x: -1.4284363, y: 0.057582855}
-  - {x: -1.5364075, y: 0.20685577}
-  - {x: -1.6307068, y: 0.44444656}
-  - {x: -1.650116, y: 0.5989456}
-  - {x: -1.6199036, y: 0.8218422}
-  - {x: -1.5090027, y: 0.98194504}
-  - {x: -1.4371977, y: 1.0497398}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &1159936200342881787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24d91307ea39294594f72ed5d19757e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss_pattern: {fileID: 0}
 --- !u!114 &8339358358332704313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +127,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee165ccc9381ed4d9f90d89c84eff75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1787448125
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123245391218030166}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &1787448137
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123245391218030166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.40620708, y: 0.096206665}
+  serializedVersion: 2
+  m_Radius: 1.6070662
+--- !u!95 &1787448118
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123245391218030166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 724e5789f85855e4bb4348de940db6fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
