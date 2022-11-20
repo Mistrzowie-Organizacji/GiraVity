@@ -15,8 +15,8 @@ public class BlackHoleScale : MonoBehaviour
     private void scale()
     {
         size = blackHole.transform.localScale;
-        size.x += 0.005f;
-        size.y += 0.005f;
+        size.x += 0.0005f;
+        size.y += 0.0005f;
         blackHole.transform.localScale = size;
     }
     private void bounce()
