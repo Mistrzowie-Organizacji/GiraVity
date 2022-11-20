@@ -47,7 +47,8 @@ public class PullIntoTheHole : MonoBehaviour
     // Update is called once per frame
     private void IncreaseValue(float valueX)
     {
-        player.transform.position = new Vector3(valueX, player.transform.position.y);
+        if(player != null)
+            player.transform.position = new Vector2(valueX, player.transform.position.y);
     }
 
     private void IncreaseValueY(float valueY)
