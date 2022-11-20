@@ -16,7 +16,7 @@ public class clonning_enemies : MonoBehaviour
     }
     void Update()
     {
-        if(nr_of_enemies < 15 && seconds >= 3)
+        if(nr_of_enemies < 25 && seconds >= 0.5f)
         {
             adding_enemy();
             seconds = 0;

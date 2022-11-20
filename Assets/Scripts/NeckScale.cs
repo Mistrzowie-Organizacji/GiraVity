@@ -8,21 +8,21 @@ public class NeckScale : MonoBehaviour
    
 
     float neckLength = 1f;
+    private GameObject head;
+    private GameObject neck;
+    private GameObject body;
+
     void Start()
     {
-        
+        head = GameObject.Find("Head");
+        neck = GameObject.Find("Neck");
+        body = GameObject.Find("Body");
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        GameObject head;
-        GameObject neck;
-        GameObject body;
-        head = GameObject.Find("Head");
-        neck = GameObject.Find("Neck");
-        body = GameObject.Find("Body");
         Vector3 headPos = head.transform.position - new Vector3(1f,0,0);
         Vector3 bodyPos = body.transform.position + new Vector3(0.7f,0,0);
 
@@ -40,10 +40,5 @@ public class NeckScale : MonoBehaviour
         if(Input.GetKey(KeyCode.S)){
             neckLength -= 0.1f;
         }
-    }
-
-    void FixedUpdate()
-    {
-        
     }
 }

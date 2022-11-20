@@ -34,14 +34,14 @@ public class enemy_movment : MonoBehaviour
         projectile_enemy.SetActive(true);
         projectile_enemy.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         projectile_enemy.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        projectile_enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 5;
+        projectile_enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * 8;
         Destroy(projectile_enemy, 5f);
     }
     private void movement()
     {
         if (distance_to_character() >= 10)
         {
-                transform.position = Vector2.MoveTowards(transform.position, get_main_character_position(), 7 * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, get_main_character_position(), 8 * Time.deltaTime);
         }
         else
         {
@@ -63,6 +63,7 @@ public class enemy_movment : MonoBehaviour
         
        if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
        {
+            clonning_enemies.nr_of_enemies--;
             Destroy(gameObject);
             Destroy(collision.gameObject);
             GameObject.Find("GameController").GetComponent<PointSystem>().OnKillEnemy();

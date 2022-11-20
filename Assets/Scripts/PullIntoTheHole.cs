@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PullIntoTheHole : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PullIntoTheHole : MonoBehaviour
             check_collision();
             yield return null;
         }
+
     }
     private void check_collision()
     {
@@ -33,13 +35,12 @@ public class PullIntoTheHole : MonoBehaviour
         distance = Vector3.Distance(blackHole.transform.position, player.transform.position);
         if (distance < min_distance)
         {
-            print(distance);
-
             //player.transform.position = blackHole.transform.position + (player.transform.position - blackHole.transform.position) * 0.97f;
             if (!LeanTween.isTweening(easingIDx))
                 easingIDx = LeanTween.value(player.transform.position.x, blackHole.transform.position.x + (player.transform.position.x - blackHole.transform.position.x) * 0.85f, 0.1f).setOnUpdate(IncreaseValue).uniqueId;
             if (!LeanTween.isTweening(easingIDy))
                 easingIDy = LeanTween.value(player.transform.position.y, blackHole.transform.position.y + (player.transform.position.y - blackHole.transform.position.y) * 0.85f, 0.1f).setOnUpdate(IncreaseValueY).uniqueId;
+
         }
 
     }
