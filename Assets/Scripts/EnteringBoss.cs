@@ -13,7 +13,7 @@ public class EnteringBoss : MonoBehaviour
         black_hole_collider = GameObject.Find("black_hole_official").GetComponent<Collider2D>();
         main_char_collider = GameObject.Find("giraffe").GetComponent<Collider2D>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (black_hole_collider.IsTouching(main_char_collider))
         {
