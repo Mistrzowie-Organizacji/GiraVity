@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_mechanics : MonoBehaviour
 {
+    [SerializeField] private int bossHP;
+
     public GameObject enemy_bullet;
     public GameObject asteroid;
     private GameObject new_asteroid;
@@ -15,13 +18,27 @@ public class Boss_mechanics : MonoBehaviour
     private GameObject head_2;
     private GameObject head_3;
     private GameObject head_4;
+
     void Start()
     {
-     head_1 = GameObject.Find("head");
-     head_2 = GameObject.Find("head (1)");
-     head_3 = GameObject.Find("head (2)");
-     head_4 = GameObject.Find("head (3)");
+        head_1 = GameObject.Find("head");
+        head_2 = GameObject.Find("head (1)");
+        head_3 = GameObject.Find("head (2)");
+        head_4 = GameObject.Find("head (3)");
     }
+
+    public void TakeDamage(int damage)
+    {
+        bossHP -= damage;
+        if (bossHP <= 0)
+            Die();
+    }
+
+    private void Die()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
     private Vector3 direction_calculate(Vector3 head_position)
     {
         Vector3 direction = GameObject.Find("giraffe").transform.position - head_position;
@@ -61,11 +78,11 @@ public class Boss_mechanics : MonoBehaviour
     }
     private void asteroid_attack()
     {
-        if(time_between_asteroid >= 0.5f)
+        if (time_between_asteroid >= 0.5f)
         {
             Vector3 main_character_position = GameObject.Find("giraffe").transform.position;
             time_between_asteroid = 0;
-            new_asteroid = GameObject.Instantiate(asteroid, new Vector3(Random.Range(main_character_position.x -15,main_character_position.x + 15), main_character_position.y+20, 0), Quaternion.identity);
+            new_asteroid = GameObject.Instantiate(asteroid, new Vector3(Random.Range(main_character_position.x - 15, main_character_position.x + 15), main_character_position.y + 20, 0), Quaternion.identity);
             new_asteroid.GetComponent<Rigidbody2D>().velocity = new Vector2(-3, 0);
             new_asteroid.SetActive(true);
             Destroy(new_asteroid, 10f);
@@ -74,7 +91,7 @@ public class Boss_mechanics : MonoBehaviour
     }
     private void timers_checking()
     {
-        if(auto_attack_timer < 2.5f)
+        if (auto_attack_timer < 2.5f)
         {
             auto_attack_timer += Time.deltaTime;
         }
@@ -83,11 +100,11 @@ public class Boss_mechanics : MonoBehaviour
             auto_attack();
             auto_attack_timer = 0;
         }
-        if(asteroid_rain_timer < 20f)
+        if (asteroid_rain_timer < 20f)
         {
             asteroid_rain_timer += Time.deltaTime;
         }
-        else if(asteroid_rain_timer >= 20f && asteroid_rain_timer < 30f)
+        else if (asteroid_rain_timer >= 20f && asteroid_rain_timer < 30f)
         {
             asteroid_rain_timer += Time.deltaTime;
             time_between_asteroid += Time.deltaTime;
@@ -101,6 +118,6 @@ public class Boss_mechanics : MonoBehaviour
     void Update()
     {
         timers_checking();
-        
+
     }
 }

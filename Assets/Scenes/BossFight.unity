@@ -1387,7 +1387,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
 --- !u!1 &974532873
 GameObject:
@@ -1626,6 +1627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 655372387}
+  heart: {fileID: 0}
 --- !u!68 &1010027293
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2248,6 +2250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2077697751}
     m_Modifications:
+    - target: {fileID: 1659523314, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3702390448892344105, guid: 7a9c0ed130955f545802b25fe7c663e3, type: 3}
       propertyPath: m_Layer
       value: 6
