@@ -60,10 +60,12 @@ public class enemy_movment : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == GameObject.Find("bullet_pseudo(Clone)"))
-        {
+        
+       if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
+       {
             Destroy(gameObject);
-        }
+            Destroy(collision.gameObject);
+       }
     }
 
     // Update is called once per frame
