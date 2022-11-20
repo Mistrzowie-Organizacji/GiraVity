@@ -291,10 +291,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 467227638}
-    - target: {fileID: 1226017477680177456, guid: 438f9386003611a4abb454a5758728b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1295829880137033161, guid: 438f9386003611a4abb454a5758728b2, type: 3}
       propertyPath: m_Camera
       value: 
@@ -351,10 +347,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4778547087054022094, guid: 438f9386003611a4abb454a5758728b2, type: 3}
-      propertyPath: m_TagString
-      value: MainMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438f9386003611a4abb454a5758728b2, type: 3}
 --- !u!1001 &9199491838161363139
@@ -367,6 +359,10 @@ PrefabInstance:
     - target: {fileID: 9199491837006005649, guid: de4e6c0ef22930a429dd9c5af271cad5, type: 3}
       propertyPath: m_Name
       value: VictoryWindowUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199491837006005649, guid: de4e6c0ef22930a429dd9c5af271cad5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9199491837006005652, guid: de4e6c0ef22930a429dd9c5af271cad5, type: 3}
       propertyPath: mainMenu
