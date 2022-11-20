@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1719d974c96334da213a5a3e5f75f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossHP: 0
   enemy_bullet: {fileID: 0}
   asteroid: {fileID: 0}
 --- !u!1 &3542915505851339215
